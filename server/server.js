@@ -10,7 +10,8 @@ var {User} = require('./models/User');
 var app = express();
 
 app.use(bodyParser.json());
-//Route
+
+//Route POST
 app.post('/todos',(req,res) => {
 	var todo = new Todo({
 		text: req.body.text
@@ -22,6 +23,9 @@ app.post('/todos',(req,res) => {
 	});
 });
 
+
 app.listen(3000, () => {
 	console.log('Strat on port 300');
 });
+
+module.exports ={app};
